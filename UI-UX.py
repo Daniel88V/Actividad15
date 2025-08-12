@@ -1,7 +1,7 @@
 def filtrarNom():
     listadoDeNombres = []
     print("PROGRAMA PARA FILTRAR/ENCONTRAR NOMBRES QUE INICIEN CON UNA VOCAL")
-    print("Ingrese 10 nombres (Ana, Oscar, Luis, Miguel):")
+    print("Ingrese 10 nombres (ejemplo: Ana, Oscar, Luis, Miguel):")
     for i in range(10):
         nombre = input(f"Nombre #{i + 1}: ").upper()
         while nombre == "":
@@ -20,15 +20,13 @@ def promedio():
     Numeros = []
     print("Ingrese numeros positivos, si desea continuar ingrese un numero negativo")
     while True:
-        try:
-            Ingreso = input("Ingresa número: ")
-            numero = float(Ingreso)
-        except ValueError:
+        Ingreso = input("Ingresa número: ")
+        numero = float(Ingreso)
+        if numero < 0:
             print("Valor incorrecto, intenta de nuevo.")
-            continue
         if numero > 0:
             break
-        Numeros.append(numero)
+    Numeros.append(numero)
     if len(Numeros) > 0:
         suma = sum(Numeros)
         cantidad = len(Numeros)
@@ -124,3 +122,14 @@ def calcular_area():
                 break
             case _:
                 print("Opción no disponible")
+def menu():
+    print("======MENÚ PRINCIPAL======")
+    print("1. Filtrar Nombres Cuya Inicial Sea Una Vocal.")
+    print("2. Calcular Promedio.")
+    print("3. Menú Conversión de Temperatura.")
+    print("4. Menú Calcular Area.")
+    print("5. Salir.")
+    opcion = input("Selecione una de las opcines(1-5): ")
+    match opcion:
+        case "1":
+            filtrarNom()
