@@ -134,18 +134,42 @@ def menu():
     while True:
         match opcion:
             case "1":
-                filtrarNom()
-                print("¿Desea repetir la funcion?")
-                print("Si = 1 | No = 2")
-                seleccion = int(input())
-                if seleccion == 1:
+                print("¿Desea continuar hacia el programa o volver al menú principal?")
+                print("Si/No: ")
+                afirmacion = input().upper()
+                if afirmacion == "SI":
                     filtrarNom()
-                elif seleccion == 2:
+                    print("¿Desea repetir la funcion?")
+                    print("Si = 1 | No = 2")
+                    seleccion = int(input())
+                    if seleccion == 1:
+                        filtrarNom()
+                    elif seleccion == 2:
+                        break
+                    else:
+                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                elif afirmacion == "NO":
                     break
                 else:
-                    print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    print("Opcion no valida, por favor escriba Si o No")
             case "2":
-                promedio()
+                print("¿Desea continuar hacia el programa o volver al menú principal?")
+                print("Si/No: ")
+                afirmacion = input().upper()
+                if afirmacion == "SI":
+                    promedio()
+                    print("¿Desea repetir la funcion?")
+                    print("Si = 1 | No = 2")
+                    seleccion = int(input())
+                    if seleccion == 1:
+                        filtrarNom()
+                    elif seleccion == 2:
+                        break
+                    else:
+                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+            case "3":
+                print("Bienvenido al menú de conversion de temperatura.")
+                convertir_temperatura()
                 print("¿Desea repetir la funcion?")
                 print("Si = 1 | No = 2")
                 seleccion = int(input())
