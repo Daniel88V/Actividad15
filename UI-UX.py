@@ -49,6 +49,7 @@ def convertir_temperatura():
         print("1. Celsius a Fahrenheit")
         print("2. Fahrenheit a Celsius")
         print("3. Volver al Menú Principal")
+        print("-------------------------------------------------------------")
         grados_opcion = input()
         match grados_opcion:
             case "1":
@@ -79,13 +80,14 @@ def convertir_temperatura():
             case _:
                 print("Opción no disponible")
 def calcular_area():
-    print(" --- Calcular Área ---")
+    print(" --- Bienvenido al Menú de Calcular Área ---")
     while True:
         print("Cuadrado - 1")
         print("Círculo - 2")
         print("Triángulo - 3")
         print("Volver al Menú Principal - 4")
         eleccion = input("Seleccione una opción: ")
+        print("---------------------------------------------")
         match eleccion:
             case "1":
                 while True:
@@ -167,15 +169,51 @@ def menu():
                         break
                     else:
                         print("Opcion no valida, por favor seleccione Si(1) o No(2)")
-            case "3":
-                print("Bienvenido al menú de conversion de temperatura.")
-                convertir_temperatura()
-                print("¿Desea repetir la funcion?")
-                print("Si = 1 | No = 2")
-                seleccion = int(input())
-                if seleccion == 1:
-                    filtrarNom()
-                elif seleccion == 2:
+                elif afirmacion == "NO":
                     break
                 else:
-                    print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    print("Opcion no valida, por favor escriba Si o No")
+            case "3":
+                print("¿Desea continuar hacia el programa o volver al menú principal?")
+                print("Si/No: ")
+                afirmacion = input().upper()
+                if afirmacion == "SI":
+                    print("------ Bienvenido al menú de conversion de temperatura. ------")
+                    convertir_temperatura()
+                    print("¿Desea repetir la funcion?")
+                    print("Si = 1 | No = 2")
+                    seleccion = int(input())
+                    if seleccion == 1:
+                        filtrarNom()
+                    elif seleccion == 2:
+                        break
+                    else:
+                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                elif afirmacion == "NO":
+                    break
+                else:
+                    print("Opcion no valida, por favor escriba Si o No")
+            case "4":
+                print("¿Desea continuar hacia el programa o volver al menú principal?")
+                print("Si/No: ")
+                afirmacion = input().upper()
+                if afirmacion == "SI":
+                    calcular_area()
+                    print("¿Desea repetir la funcion?")
+                    print("Si = 1 | No = 2")
+                    seleccion = int(input())
+                    if seleccion == 1:
+                        filtrarNom()
+                    elif seleccion == 2:
+                        break
+                    else:
+                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                elif afirmacion == "NO":
+                    break
+                else:
+                    print("Opcion no valida, por favor escriba Si o No")
+            case "5":
+                print("Saliendo del programa...")
+                exit()
+            case _:
+                print("Opcion no valida, por favor seleccione una de las opciones entre 1-5")
