@@ -126,92 +126,100 @@ def calcular_area():
             case _:
                 print("Opción no disponible")
 def menu():
-    print("======MENÚ PRINCIPAL======")
-    print("1. Filtrar Nombres Cuya Inicial Sea Una Vocal.")
-    print("2. Calcular Promedio.")
-    print("3. Menú Conversión de Temperatura.")
-    print("4. Menú Calcular Area.")
-    print("5. Salir.")
-    opcion = input("Selecione una de las opcines(1-5): ")
     while True:
+        print("======MENÚ PRINCIPAL======")
+        print("1. Filtrar Nombres Cuya Inicial Sea Una Vocal.")
+        print("2. Calcular Promedio.")
+        print("3. Menú Conversión de Temperatura.")
+        print("4. Menú Calcular Area.")
+        print("5. Salir.")
+        opcion = input("Selecione una de las opcines(1-5): ")
         match opcion:
             case "1":
-                print("¿Desea continuar hacia el programa o volver al menú principal?")
-                print("Si/No: ")
-                afirmacion = input().upper()
-                if afirmacion == "SI":
-                    filtrarNom()
-                    print("¿Desea repetir la funcion?")
-                    print("Si = 1 | No = 2")
-                    seleccion = int(input())
-                    if seleccion == 1:
-                        filtrarNom()
-                    elif seleccion == 2:
+                while True:
+                    print("¿Desea continuar hacia el programa o volver al menú principal?")
+                    print("Si/No: ")
+                    afirmacion = input().upper()
+                    if afirmacion == "SI":
+                        while True:
+                            filtrarNom()
+                            print("¿Desea repetir la funcion?")
+                            print("Si = 1 | No = 2")
+                            seleccion = int(input())
+                            if seleccion == 1:
+                                filtrarNom()
+                            elif seleccion == 2:
+                                break
+                            else:
+                                print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    elif afirmacion == "NO":
                         break
                     else:
-                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
-                elif afirmacion == "NO":
-                    break
-                else:
-                    print("Opcion no valida, por favor escriba Si o No")
+                        print("Opcion no valida, por favor escriba Si o No")
             case "2":
-                print("¿Desea continuar hacia el programa o volver al menú principal?")
-                print("Si/No: ")
-                afirmacion = input().upper()
-                if afirmacion == "SI":
-                    promedio()
-                    print("¿Desea repetir la funcion?")
-                    print("Si = 1 | No = 2")
-                    seleccion = int(input())
-                    if seleccion == 1:
-                        filtrarNom()
-                    elif seleccion == 2:
+                while True:
+                    print("¿Desea continuar hacia el programa o volver al menú principal?")
+                    print("Si/No: ")
+                    afirmacion = input().upper()
+                    if afirmacion == "SI":
+                        while True:
+                            promedio()
+                            print("¿Desea repetir la funcion?")
+                            print("Si = 1 | No = 2")
+                            seleccion = int(input())
+                            if seleccion == 1:
+                                filtrarNom()
+                            elif seleccion == 2:
+                                break
+                            else:
+                                print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    elif afirmacion == "NO":
                         break
                     else:
-                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
-                elif afirmacion == "NO":
-                    break
-                else:
-                    print("Opcion no valida, por favor escriba Si o No")
+                        print("Opcion no valida, por favor escriba Si o No")
             case "3":
-                print("¿Desea continuar hacia el programa o volver al menú principal?")
-                print("Si/No: ")
-                afirmacion = input().upper()
-                if afirmacion == "SI":
-                    print("------ Bienvenido al menú de conversion de temperatura. ------")
-                    convertir_temperatura()
-                    print("¿Desea repetir la funcion?")
-                    print("Si = 1 | No = 2")
-                    seleccion = int(input())
-                    if seleccion == 1:
-                        filtrarNom()
-                    elif seleccion == 2:
+                while True:
+                    print("¿Desea continuar hacia el programa o volver al menú principal?")
+                    print("Si/No: ")
+                    afirmacion = input().upper()
+                    if afirmacion == "SI":
+                        while True:
+                            print("------ Bienvenido al menú de conversion de temperatura. ------")
+                            convertir_temperatura()
+                            print("¿Desea repetir la funcion?")
+                            print("Si = 1 | No = 2")
+                            seleccion = int(input())
+                            if seleccion == 1:
+                                filtrarNom()
+                            elif seleccion == 2:
+                                break
+                            else:
+                                print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    elif afirmacion == "NO":
                         break
                     else:
-                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
-                elif afirmacion == "NO":
-                    break
-                else:
-                    print("Opcion no valida, por favor escriba Si o No")
+                        print("Opcion no valida, por favor escriba Si o No")
             case "4":
-                print("¿Desea continuar hacia el programa o volver al menú principal?")
-                print("Si/No: ")
-                afirmacion = input().upper()
-                if afirmacion == "SI":
-                    calcular_area()
-                    print("¿Desea repetir la funcion?")
-                    print("Si = 1 | No = 2")
-                    seleccion = int(input())
-                    if seleccion == 1:
-                        filtrarNom()
-                    elif seleccion == 2:
+                while True:
+                    print("¿Desea continuar hacia el programa o volver al menú principal?")
+                    print("Si/No: ")
+                    afirmacion = input().upper()
+                    if afirmacion == "SI":
+                        while True:
+                            calcular_area()
+                            print("¿Desea repetir la funcion?")
+                            print("Si = 1 | No = 2")
+                            seleccion = int(input())
+                            if seleccion == 1:
+                                filtrarNom()
+                            elif seleccion == 2:
+                                break
+                            else:
+                                print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                    elif afirmacion == "NO":
                         break
                     else:
-                        print("Opcion no valida, por favor seleccione Si(1) o No(2)")
-                elif afirmacion == "NO":
-                    break
-                else:
-                    print("Opcion no valida, por favor escriba Si o No")
+                        print("Opcion no valida, por favor escriba Si o No")
             case "5":
                 print("Saliendo del programa...")
                 exit()
