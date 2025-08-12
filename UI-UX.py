@@ -53,13 +53,16 @@ def convertir_temperatura():
         grados_opcion = input()
         match grados_opcion:
             case "1":
-                try:
+                while True:
                     print("Ingrese los grados Celsius: ")
                     celsius = float(input())
-                    fahrenheit = (celsius * 9/5) + 32
-                    print(f"{celsius:.2f}°C a Fahrenheit es: {fahrenheit:.2f}°F")
-                except ValueError:
-                    print("Error, por favor ingrese los grados en números")
+                    if celsius > 0:
+                        fahrenheit = (celsius * 9/5) + 32
+                        print(f"{celsius:.2f}°C a Fahrenheit es: {fahrenheit:.2f}°F")
+                    elif celsius < 0:
+                        print("Error, por favor ingrese los grados en números")
+                    else:
+                        break
             case "2":
                 while True:
                     print("Ingrese los grados Fahrenheit: ")
