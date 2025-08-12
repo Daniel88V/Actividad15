@@ -217,3 +217,5 @@ def menu():
                 exit()
             case _:
                 print("Opcion no valida, por favor seleccione una de las opciones entre 1-5")
+if __name__ == "__main__":
+    menu()
