@@ -19,15 +19,18 @@ def filtrarNom():
 def promedio():
     Numeros = []
     print("PROGRAMA PARA CALCULAR PROMEDIO")
-    print("Ingrese numeros positivos, si desea continuar ingrese un numero negativo")
-    while True:
-        Ingreso = input("Ingresa número: ")
-        numero = float(Ingreso)
-        if numero < 0:
-            print("Valor incorrecto, intenta de nuevo.")
-        if numero > 0:
-            break
-    Numeros.append(numero)
+    print("¿Cuántos números desea ingresar?")
+    cant = int(input())
+    for i in range(cant):
+        print(f"Ingrese numero #{i + 1}(números positivos): ")
+        while True:
+            Ingreso = input()
+            numero = float(Ingreso)
+            if numero < 0:
+                print("Valor incorrecto, intenta de nuevo.")
+            if numero > 0:
+                Numeros.append(numero)
+                break
     if len(Numeros) > 0:
         suma = sum(Numeros)
         cantidad = len(Numeros)
@@ -48,7 +51,6 @@ def convertir_temperatura():
         print("Escoja la conversión que desea efectuar")
         print("1. Celsius a Fahrenheit")
         print("2. Fahrenheit a Celsius")
-        print("3. Volver al Menú Principal")
         print("-------------------------------------------------------------")
         grados_opcion = input()
         match grados_opcion:
@@ -57,37 +59,38 @@ def convertir_temperatura():
                     print("Ingrese los grados Celsius: ")
                     celsius = float(input())
                     if celsius > 0:
-                        fahrenheit = (celsius * 9/5) + 32
+                        fahrenheit = (celsius * 9 / 5) + 32
                         print(f"{celsius:.2f}°C a Fahrenheit es: {fahrenheit:.2f}°F")
-                    elif celsius < 0:
-                        print("Error, por favor ingrese los grados en números")
                     else:
+                        print("Error, por favor ingrese un número positivo.")
+                    continuar = input("¿Desea hacer otra conversión (1) o volver al Menú Principal (2)? ")
+                    if continuar == "2":
                         break
+                    else:
+                        print("Opcion no valida")
             case "2":
                 while True:
-                    print("Ingrese los grados Fahrenheit: ")
-                    fahrenheit = float(input())
-                    if fahrenheit > 0:
-                        celsius = (fahrenheit - 32) * 5/9
-                        print(f"{fahrenheit:.2f}°F a Celsius es: {celsius:.2f}°C")
-                    elif fahrenheit < 0:
-                        print("Error, por favor ingresar los grados en números")
-                    else:
-                        break
-            case "3":
-                print("Volviendo al menú principal...")
-                break
+                        print("Ingrese los grados Fahrenheit: ")
+                        fahrenheit = float(input())
+                        if fahrenheit > 0:
+                            celsius = (fahrenheit - 32) * 5 / 9
+                            print(f"{fahrenheit:.2f}°F a Celsius es: {celsius:.2f}°C")
+                        else:
+                            print("Error, por favor ingrese un número positivo.")
+                        continuar = input("¿Desea hacer otra conversión (1) o volver al Menú Principal (2)? ")
+                        if continuar == "2":
+                            break
             case _:
                 print("Opción no disponible")
+        break
 def calcular_area():
     print(" --- Bienvenido al Menú de Calcular Área ---")
     while True:
         print("Cuadrado - 1")
         print("Círculo - 2")
         print("Triángulo - 3")
-        print("Volver al Menú Principal - 4")
-        eleccion = input("Seleccione una opción: ")
         print("---------------------------------------------")
+        eleccion = input("Seleccione una opción: ")
         match eleccion:
             case "1":
                 while True:
@@ -95,20 +98,22 @@ def calcular_area():
                     if x > 0:
                         area = x * x
                         print(f"El área del cuadrado es: {area:.2f}u^2")
-                    elif x < 0:
-                        print("Por favor ingresa un número")
+                        continuar = input("¿Desea calcular otra área (1) o volver al Menú Principal (2)? ")
+                        if continuar == "2":
+                            break
                     else:
-                        break
+                        print("Por favor, ingrese un número positivo.")
             case "2":
                 while True:
                     z = float(input("Ingrese el valor del radio: "))
                     if z > 0:
                         area = z * z * 3.1416
                         print(f"El área del círculo es: {area:.2f}u^2")
-                    elif z < 0:
-                        print("Por favor ingresa un número positivo")
-                    else:
-                        break
+                        continuar = input("¿Desea calcular otra área (1) o volver al Menú Principal (2)? ")
+                        if continuar == "2":
+                            break
+                        else:
+                            print("Por favor, ingrese un número positivo.")
             case "3":
                 while True:
                     y = float(input("Ingrese el valor de la altura: "))
@@ -116,15 +121,14 @@ def calcular_area():
                     if y > 0 and j > 0:
                         area = (y * j) / 2
                         print(f"El área del triángulo es: {area:.2f}u^2")
-                    elif y < 0 or j < 0:
-                        print("Error. Hay un valor que invalida la ecuación, por favor trate de nuevo")
+                        continuar = input("¿Desea calcular otra área (1) o volver al Menú Principal (2)? ")
+                        if continuar == "2":
+                            break
                     else:
-                        break
-            case "4":
-                print("Volviendo al menú principal...")
-                break
+                        print("Error. Hay un valor no positivo, por favor intente de nuevo.")
             case _:
                 print("Opción no disponible")
+        break
 def menu():
     while True:
         print("======MENÚ PRINCIPAL======")
@@ -152,6 +156,7 @@ def menu():
                                 break
                             else:
                                 print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                        break
                     elif afirmacion == "NO":
                         break
                     else:
@@ -168,11 +173,12 @@ def menu():
                             print("Si = 1 | No = 2")
                             seleccion = int(input())
                             if seleccion == 1:
-                                filtrarNom()
+                                promedio()
                             elif seleccion == 2:
                                 break
                             else:
                                 print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                        break
                     elif afirmacion == "NO":
                         break
                     else:
@@ -190,11 +196,12 @@ def menu():
                             print("Si = 1 | No = 2")
                             seleccion = int(input())
                             if seleccion == 1:
-                                filtrarNom()
+                                convertir_temperatura()
                             elif seleccion == 2:
                                 break
                             else:
                                 print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                        break
                     elif afirmacion == "NO":
                         break
                     else:
@@ -216,6 +223,7 @@ def menu():
                                 break
                             else:
                                 print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+                        break
                     elif afirmacion == "NO":
                         break
                     else:
