@@ -18,6 +18,7 @@ def filtrarNom():
                 print(nombre)
 def promedio():
     Numeros = []
+    print("PROGRAMA PARA CALCULAR PROMEDIO")
     print("Ingrese numeros positivos, si desea continuar ingrese un numero negativo")
     while True:
         Ingreso = input("Ingresa número: ")
@@ -130,6 +131,27 @@ def menu():
     print("4. Menú Calcular Area.")
     print("5. Salir.")
     opcion = input("Selecione una de las opcines(1-5): ")
-    match opcion:
-        case "1":
-            filtrarNom()
+    while True:
+        match opcion:
+            case "1":
+                filtrarNom()
+                print("¿Desea repetir la funcion?")
+                print("Si = 1 | No = 2")
+                seleccion = int(input())
+                if seleccion == 1:
+                    filtrarNom()
+                elif seleccion == 2:
+                    break
+                else:
+                    print("Opcion no valida, por favor seleccione Si(1) o No(2)")
+            case "2":
+                promedio()
+                print("¿Desea repetir la funcion?")
+                print("Si = 1 | No = 2")
+                seleccion = int(input())
+                if seleccion == 1:
+                    filtrarNom()
+                elif seleccion == 2:
+                    break
+                else:
+                    print("Opcion no valida, por favor seleccione Si(1) o No(2)")
